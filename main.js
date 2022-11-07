@@ -239,10 +239,10 @@ for (let i = 0; i <inventory.length ; i++) {
 
 //2E [X]
 let amountRemaining = 0;
-  amountRemaining = amountStock - amountSold
-  document.getElementById("beschikbaar");
-  beschikbaar.textContent = amountRemaining;
-  beschikbaar.style.color = "red";
+amountRemaining = amountStock - amountSold
+document.getElementById("beschikbaar");
+beschikbaar.textContent = amountRemaining;
+beschikbaar.style.color = "red";
 
 
 
@@ -252,18 +252,18 @@ let amountRemaining = 0;
 // Opdracht 3b: Schrijf de code uit 3a om naar een functie die een array met tv-objecten verwacht. Het is handig om onze scripts als functies op te zetten, zodat we ze gemakkelijk kunnen hergebruiken. Tip: vergeet deze functie -declaratie niet aan te roepen!
 //
 //3A + B [X]
- function tvBrandName(array){
-   const tvBrands = array.map((array) => {
-   return array.brand;
- });
-   const listOfBrands = document.createDocumentFragment();
-   for (let tvBrand of tvBrands){
-     const li = document.createElement("li");
-     li.textContent = tvBrand;
-     listOfBrands.appendChild(li);
-   }
-   const container = document.getElementById("naamlijst");
-   container.appendChild(listOfBrands);
+function tvBrandName(array){
+  const tvBrands = array.map((array) => {
+    return array.brand;
+  });
+  const listOfBrands = document.createDocumentFragment();
+  for (let tvBrand of tvBrands){
+    const li = document.createElement("li");
+    li.textContent = tvBrand;
+    listOfBrands.appendChild(li);
+  }
+  const container = document.getElementById("naamlijst");
+  container.appendChild(listOfBrands);
 }
 tvBrandName(inventory);
 
@@ -281,9 +281,9 @@ tvBrandName(inventory);
 // Opdracht 4a: Maak een herbruikbare functie die een string genereert voor de naam van één tv en deze teruggeeft in het format [merk] [type] - [naam] zoals Philips 43PUS6504/12 - 4K TV of NIKKEI NH3216SMART - HD smart-TV
 //---------------------------------------------------------------//
 function brandTypeName(tv){
-   return tv.brand + " " + tv.type + " - " + tv.name;
- }
- console.log(brandTypeName(inventory[0]));
+  return tv.brand + " " + tv.type + " - " + tv.name;
+}
+console.log(brandTypeName(inventory[0]));
 
 
 //-----------------------------------------------------------------//
@@ -299,7 +299,7 @@ console.log(priceTv(inventory[0]))
 //
 //4C
 function stringOfSize(tv){
-   let container = ""
+  let container = ""
   for (let i = 0; i < tv.availableSizes.length; i++) {
     const inch = tv.availableSizes[i]
     const cm = tv.availableSizes[i] * 2.54;
@@ -321,7 +321,7 @@ console.log(stringOfSize(inventory[3]))
 //------------------------------------------------------------//
 //4D EN E
 function print(arr){
-let display = "";
+  let display = "";
   arr.map((input) =>
   {
     const tvName = brandTypeName(input);
@@ -330,7 +330,7 @@ let display = "";
     display += tvName + "\n" + tvPrice + "\n" + tvSize + "\n";
   });
   return display
- }
+}
 
 console.log(print(inventory));
 
@@ -384,38 +384,37 @@ function giveAmbilight(arr) {
         <td>${inventory.brand}</td>
         <td>${inventory.type}</td>
         <td>${inventory.availableSizes}</td>
-        <td id="soldOut">${inventory.sold}</td>
-        <td id="hasAmbilight">${inventory.options.ambiLight}</td>
-        <td id="sortPrice">${inventory.price}</td>
-      </tr>
-      `
-  });
-}
+         <td id="soldOut">${inventory.sold}</td>
+         <td id="hasAmbilight">${inventory.options.ambiLight}</td>
+         <td id="sortPrice">${inventory.price}</td>
+       </tr>
+       `
+   });
+ }
 // 1D
- function sortOnPrice(arr) {
+function sortOnPrice(arr) {
   ClearTableFirst()
-   inventory.toString = arr.sort((a, b) => a.price - b.price)
-   let tableField = document.getElementById("table-field")
-   arr.map((inventory) => {
+  inventory.toString = arr.sort((a, b) => a.price - b.price)
+  let tableField = document.getElementById("table-field")
+  arr.map((inventory) => {
     return tableField.innerHTML +=
         ` <tr class="overWrite" >
-        <td>${inventory.name}</td>
-        <td>${inventory.brand}</td>
-        <td>${inventory.type}</td>
-        <td>${inventory.availableSizes}</td>
-        <td id="soldOut">${inventory.sold}</td>
-        <td id="hasAmbilight">${inventory.options.ambiLight}</td>
-        <td id="sortPrice">${inventory.price}</td>
-      </tr>
-      `
+         <td>${inventory.name}</td>
+         <td>${inventory.brand}</td>
+         <td>${inventory.type}</td>
+         <td>${inventory.availableSizes}</td>
+         <td id="soldOut">${inventory.sold}</td>
+         <td id="hasAmbilight">${inventory.options.ambiLight}</td>
+         <td id="sortPrice">${inventory.price}</td>
+       </tr>
+       `
 
-  });
-}
-function ClearTableFirst(){
-  const elements = document.querySelectorAll(".overWrite");
-  elements.forEach(element => {element.remove();});
-
-}
+   });
+ }
+ function ClearTableFirst(){
+   const elements = document.querySelectorAll(".overWrite");
+   elements.forEach(element => {element.remove();});
+ }
 
 
 
