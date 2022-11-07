@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Tech It Easy Dashboard</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" type="text/css">
 
+</head>
+<body class="body">
+
+<h1>Opdracht 1</h1>
+<p class="text">het aantal TV's dat is verkocht is  <span id="verkocht">[verkocht]</span>.</p>
+<p class="text"> het aantal in stock is <span id="gekocht">[gekocht]</span>.</p>
+<p class="text">het aantal dat verkocht moet worden is <span id="beschikbaar">[beschikbaar]</span>.</p>
+
+<ul id="naamlijst"></ul>
+
+
+
+<table id="tafel-Veld"></table>
+
+<input class="button-73" role="button" type="button" value="click to see whats sold out" onclick="giveTvName(inventory);">
+<input class="button-73" role="button" type="button" value="this tv has ambilight" onclick="giveAmbilight(inventory);">
+<input class="button-73" role="button" type="button" value="click to sort products on price" onclick="sortOnPrice(inventory);">
+
+<table id="table-field">
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Type</th>
+        <th>Available Sizes in inch</th>
+        <th>Sold</th>
+        <th>ambilight</th>
+        <th>price</th>
+    </tr>
+</table>
+
+<h3>BonusOpdracht</h3>
+
+
+
+
+
+<script src="main.js"></script>
 </body>
 </html>
