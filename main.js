@@ -414,7 +414,6 @@ function giveAmbilight(arr) {
 function ClearTableFirst(){
   const elements = document.querySelectorAll(".overWrite");
   elements.forEach(element => {element.remove();});
-
 }
 
 
